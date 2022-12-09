@@ -14,7 +14,8 @@ def read(path: str) -> List[Dict]:
 
         return conteudos_list
 
-# print(read("data/jobs.csv")[0])
+
+# print(read("data/jobs.csv"))
 # """Reads a file from a given path and returns its contents
 
 # Parameters
@@ -31,6 +32,11 @@ def read(path: str) -> List[Dict]:
 
 
 def get_unique_job_types(path: str) -> List[str]:
+    unique_job = read(path)
+    job_list = []
+    for job in unique_job:
+        job_list.append(job["job_type"])
+    return set(job_list)
     """Checks all different job types and returns a list of them
 
     Must call `read`
