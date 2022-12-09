@@ -1,7 +1,16 @@
 from typing import List, Dict
+from src.insights.jobs import read
+
+# retirei a solução da lista vazia deste endereço:
+# https://pythonhelp.wordpress.com/2013/05/23/retirando-elementos-vazios-de-uma-lista/
 
 
 def get_unique_industries(path: str) -> List[str]:
+    unique_industries = read(path)
+    industries_list = []
+    for industries in unique_industries:
+        industries_list.append(industries["industry"])
+    return set(filter(None, industries_list))
     """Checks all different industries and returns a list of them
 
     Must call `read`
