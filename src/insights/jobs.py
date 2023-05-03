@@ -15,20 +15,7 @@ def read(path: str) -> List[Dict]:
         return conteudos_list
 
 
-# print(read("data/jobs.csv"))
-# """Reads a file from a given path and returns its contents
-
-# Parameters
-# ----------
-# path : str
-#     Full path to file
-
-# Returns
-# -------
-# list
-#     List of rows as dicts
-# """
-# raise NotImplementedError
+print(read("data/jobs.csv"))
 
 
 def get_unique_job_types(path: str) -> List[str]:
